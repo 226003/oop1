@@ -1,46 +1,60 @@
-// Interfejs
-class Animal
+//intefejs
+class Object
 {
-public:
-    virtual void eat() = 0;
-    virtual void move() = 0;
+    public: 
+        virtual void sell() = 0;
+        virtual void exhibit() = 0;
 };
 
-// Klasa abstrakcyjna
-class Mammal : Animal
+//klasy abstrakcyjne
+class Furniture : Object
 {
-public:
-    virtual void drinkMilk()
-    {
+    public:
+        virtual void clean()
+        {
 
-    };
-
-    void eat(){}
-    void move(){}
+        };
+        void sell(){}
+        void exhibit(){}
 };
 
-// Zwyczajna klasa
-class Human : Mammal
+class Equipment : Object
 {
-private:
-	char *name;
-	int birthDate;
- 
-public:
-	Human(char *name, int birthDate){};
-	void eat(){};
-	void move(){};
+    public: 
+        virtual void test()
+        {
+
+        };
+        void sell(){}
+        void exhibit(){}
 };
 
-class Dog : Mammal
+//zwyczajne klasy
+class Chair : Furniture
 {
-
+    private:
+        char *name;
+        char *making;
+        double price;
+    public:
+        Chair(char *name, char *making, double price){};
 };
+
+class TV : Equipment
+{
+    private:
+        char *name;
+        char *trademark;
+        float price;
+    public:
+        TV(char *name, char *trademark, double price){};
+        void turn_on();
+        void turn_off();
+};
+
 
 int main(int argc, char const *argv[])
- {
- 	Human janek = Human("Janek", 123);
- 	Human anna = Human("Anna", 123);
- 	Human zosia = Human("Zosia", 123);
- 	Dog burek = Dog();
- } 
+{
+    Chair chair1 = Chair("GardenChair","wooden",45.99);
+    TV tv1 = TV("HDPP","Philips", 2500.99);
+}
